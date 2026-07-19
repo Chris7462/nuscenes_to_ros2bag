@@ -1,0 +1,5 @@
+nuscenes_to_ros2bag_node:
+  ros__parameters:
+    dataroot: "/data/nuscenes/v1.0-mini"
+    version: "v1.0-mini"
+    scene_number: 61
