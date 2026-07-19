@@ -1,0 +1,124 @@
+# QoS override for offline nuScenes bag playback.
+# Usage: ros2 bag play <bag> --qos-profile-overrides-path config/qos_override_offline.yaml
+#
+# All topics are set to reliable to ensure consistent playback rate.
+# For live sensor deployment, no override is needed as sensors publish directly.
+
+# Camera images: reliable, depth 5
+/nuscenes/cam_front/image_raw:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 5
+
+/nuscenes/cam_front_left/image_raw:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 5
+
+/nuscenes/cam_front_right/image_raw:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 5
+
+/nuscenes/cam_back/image_raw:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 5
+
+/nuscenes/cam_back_left/image_raw:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 5
+
+/nuscenes/cam_back_right/image_raw:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 5
+
+# LiDAR: reliable, depth 5
+/nuscenes/lidar_top:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 5
+
+# Camera info: reliable, depth 10
+/nuscenes/cam_front/camera_info:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/nuscenes/cam_front_left/camera_info:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/nuscenes/cam_front_right/camera_info:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/nuscenes/cam_back/camera_info:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/nuscenes/cam_back_left/camera_info:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/nuscenes/cam_back_right/camera_info:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+# Radar: reliable, depth 10
+/nuscenes/radar_front:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/nuscenes/radar_front_left:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/nuscenes/radar_front_right:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/nuscenes/radar_back_left:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+/nuscenes/radar_back_right:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
+
+# Ego pose (ground truth odometry): reliable, depth 10
+/nuscenes/odom:
+  reliability: reliable
+  durability: volatile
+  history: keep_last
+  depth: 10
